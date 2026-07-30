@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LUXORA DECOR - Online Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+         .navbar-fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            width: 100%;
+            background-color: #343a40 !important; /* dark background */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+        /* Custom styles for better alignment */
+        .cart-table th,
+        .cart-table td {
+            vertical-align: middle !important;
+            text-align: center !important;
+        }
+        .cart-table .product-cell {
+            text-align: left !important;
+            padding-left: 15px;
+        }
+        .cart-table .product-cell img {
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        .cart-table .price-cell,
+        .cart-table .total-cell {
+            font-weight: 600;
+        }
+        .cart-table .qty-cell {
+            font-weight: 500;
+        }
+        .cart-table .remove-cell {
+            text-align: center !important;
+        }
+        .cart-table .remove-cell .btn {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .cart-summary {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Topbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+        <div class="container-fluid px-xl-5">
+            <!-- Brand -->
+            <a href="index.html" class="navbar-brand text-decoration-none">
+            <img src="img/logo2.png"
+             alt="Luxora Decor"
+             style="height: 100px; width: auto;"
+             class="me-3">
+               <!-- <span class="h1 text-uppercase text-primary bg-dark px-2">LUXORA</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">DECOR</span>-->
+            </a>
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Left links -->
+                <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-2"><a class="nav-link" href="index.html">Home</a></li>
+           <li class="nav-item mx-2"><a class="nav-link" href="#Gallery">Gallery</a></li>
+         <li class="nav-item mx-2"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item mx-2"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Search form -->
+                <form class="form-inline my-2 my-lg-0 d-none d-lg-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products" style="width: 200px;">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Right icons -->
+                <div class="d-flex align-items-center ml-auto">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">Sign in</button>
+                            <button class="dropdown-item" type="button">Sign up</button>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+                    </a>
+
+                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+                        <i class="far fa-heart"></i>
+                        <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Start -->
+    <div class="container-fluid" style="padding-top: 80px;">
+        <div class="row px-xl-5">
+
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-light table-borderless table-hover text-center cart-table mb-0">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="text-align: left !important; padding-left: 15px;">Products</th>
+                            <th style="text-align: center !important;">Price</th>
+                            <th style="text-align: center !important;">Quantity</th>
+                            <th style="text-align: center !important;">Total</th>
+                            <th style="text-align: center !important;">Remove</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cart-items">
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="bg-light p-30 mb-5 cart-summary">
+
+                    <div class="border-bottom pb-2">
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Subtotal</h6>
+                            <h6 id="subtotal">₹0</h6>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Shipping</h6>
+                            <h6 class="font-weight-medium">₹10</h6>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Grand Total</h5>
+                            <h5 id="grand-total">₹0</h5>
+                        </div>
+
+                        <div id="success-message" class="alert alert-success d-none">
+                            Order placed successfully! Redirecting...
+                        </div>
+
+                        <button id="checkout-btn" class="btn btn-block btn-primary font-weight-bold my-3 py-3">
+                            Proceed To Checkout
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Cart End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 pt-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h4 class="text-uppercase text-warning mb-4">Luxora Decor</h4>
+                    <p><i>Luxora Decor brings premium home décor and interior products that combine elegance, quality, and modern design.</i></p>
+                    <p><i class="fa fa-map-marker-alt text-warning mr-2"></i>Ottapalam, Palakkad, Kerala</p>
+                    <p><i class="fa fa-envelope text-warning mr-2"></i>luxoradecor@gmail.com</p>
+                    <p><i class="fa fa-phone-alt text-warning mr-2"></i>+91 7306450239</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-outline-warning btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-warning btn-social mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-warning btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-warning btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="text-uppercase text-warning mb-4">Quick Links</h5>
+                    <a class="text-light d-block mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-light d-block mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Shop</a>
+                    <a class="text-light d-block mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                    <a class="text-light d-block mb-2" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="text-uppercase text-warning mb-4">Customer Support</h5>
+                    <a class="text-light d-block mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>My Account</a>
+                    <a class="text-light d-block mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Order Tracking</a>
+                    <a class="text-light d-block mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
+                    <a class="text-light d-block mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms & Conditions</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="text-uppercase text-warning mb-4">Newsletter</h5>
+                    <p>Subscribe to receive updates on new collections and exclusive offers.</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-warning">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2026 <strong>Luxora Decor</strong>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="mb-0">Designed & Developed by <strong>Luxora Decor</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Sample cart data - Replace with your actual data
+        const sampleCart = [
+            { name: "Wedding", price: 1000, quantity: 1, image: "https://via.placeholder.com/50" },
+            { name: "Wedding welcome", price: 1000, quantity: 1, image: "https://via.placeholder.com/50" },
+            { name: "Photo decor", price: 10000, quantity: 1, image: "https://via.placeholder.com/50" },
+            { name: "Luxury entrance", price: 55000, quantity: 1, image: "https://via.placeholder.com/50" }
+        ];
+
+        // Initialize cart if empty
+        if (!localStorage.getItem("cart")) {
+            localStorage.setItem("cart", JSON.stringify(sampleCart));
+        }
+
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartItems = document.getElementById("cart-items");
+            let html = "";
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="py-4" style="font-size:18px; color:#999;">
+                            <i class="fas fa-shopping-cart fa-2x d-block mb-2"></i>
+                            Your cart is empty
+                        </td>
+                    </tr>`;
+                document.getElementById("subtotal").innerText = "₹0";
+                document.getElementById("grand-total").innerText = "₹0";
+                updateCartCount();
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                let qty = item.quantity || 1;
+                let total = item.price * qty;
+                subtotal += total;
+
+                html += `
+                    <tr>
+                        <td class="product-cell align-middle">
+                            <img src="${item.image || 'https://via.placeholder.com/50'}" 
+                                 style="width:50px;height:50px; object-fit:cover; border-radius:5px;">
+                            <span style="font-weight:500;">${item.name}</span>
+                        </td>
+                        <td class="price-cell align-middle">₹${Number(item.price).toLocaleString()}</td>
+                        <td class="qty-cell align-middle">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${index}, -1)" style="border-radius:50%; width:30px; height:30px; padding:0;">-</button>
+                                <span class="mx-2" style="min-width:30px; font-weight:600;">${qty}</span>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${index}, 1)" style="border-radius:50%; width:30px; height:30px; padding:0;">+</button>
+                            </div>
+                        </td>
+                        <td class="total-cell align-middle">₹${Number(total).toLocaleString()}</td>
+                        <td class="remove-cell align-middle">
+                            <button class="btn btn-danger btn-sm" onclick="removeItem(${index})" style="border-radius:50%; width:35px; height:35px; padding:0;">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>`;
+            });
+
+            cartItems.innerHTML = html;
+
+            let shipping = 10;
+            let grandTotal = subtotal + shipping;
+
+            document.getElementById("subtotal").innerText = "₹" + Number(subtotal).toLocaleString();
+            document.getElementById("grand-total").innerText = "₹" + Number(grandTotal).toLocaleString();
+            updateCartCount();
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function changeQty(index, change) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart[index].quantity = (cart[index].quantity || 1) + change;
+            if (cart[index].quantity < 1) {
+                cart[index].quantity = 1;
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            let cartBadge = document.getElementById("cart-count");
+            if (cartBadge) {
+                cartBadge.textContent = count;
+                cartBadge.style.display = count > 0 ? "inline-block" : "none";
+            }
+        }
+
+        document.getElementById("checkout-btn").addEventListener("click", function() {
+            localStorage.removeItem("cart");
+            const msg = document.getElementById("success-message");
+            msg.classList.remove("d-none");
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+
+        window.onload = loadCart;
+    </script>
+
+</body>
+
+</html>
