@@ -38,7 +38,7 @@
         }
         /* Adjust body padding to avoid content hiding behind fixed navbar */
         body {
-            padding-top: 70px; /* adjust based on navbar height */
+            padding-top: 120px; /* adjust based on navbar height */
             background-color: lightgray;
         }
         /* Ensure the navbar toggler is visible and properly aligned */
@@ -254,16 +254,39 @@
             margin-top: 0;
         }
         /* ensure the topbar content is visible in mobile */
-        @media (max-width: 991.98px) {
-            .navbar-fixed-top .collapse:not(.show) {
-                display: none !important;
-            }
-            .navbar-fixed-top .navbar-collapse {
-                background: #343a40;
-                padding: 10px 15px;
-                border-radius: 0 0 8px 8px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            }
+        @media (max-width: 767px) {
+    .mobile-icons {
+
+        position: absolute;
+     right: 90px;
+        top: 42px;
+        z-index: 9999;
+    }
+
+    .mobile-icons a {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.mobile-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.mobile-icons a {
+    display: flex !important;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}
         }
         .navbar{
     min-height: 100px;
@@ -329,29 +352,39 @@
 
                 <!-- Right icons: account, cart, wishlist -->
                 <div class="d-flex align-items-center ml-auto">
-                    <!-- Account dropdown -->
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                        </div>
-                    </div>
+    <!-- Account dropdown -->
+    <div class="btn-group mr-2">
+        
 
-                    <!-- Cart -->
-                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                    </a>
-
-                    <!-- Wishlist -->
-                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
-                        <i class="far fa-heart"></i>
-                        <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                    </a>
-                </div>
-            </div>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="login.html">Sign in</a>
+            <a class="dropdown-item" href="signup.html">Sign up</a>
         </div>
+    </div>
+
+    <!-- Account button -->
+    <div class="mobile-icons">
+
+    <!-- Account -->
+    <a href="account.html" class="btn btn-outline-dark btn-square">
+        <i class="fa fa-user"></i>
+    </a>
+
+    <!-- Cart -->
+    <a href="cart.html" class="btn btn-outline-dark btn-square position-relative">
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+    </a>
+
+    <!-- Wishlist -->
+    <a href="wishlist.html" class="btn btn-outline-dark btn-square position-relative">
+        <i class="far fa-heart"></i>
+        <span id="wishlist-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+    </a>
+
+</div>
     </nav>
     <!-- ====== END FIXED NAVBAR ====== -->
 
@@ -500,7 +533,7 @@
                     <div class="offer-text">
                         <h3 class="text-white mb-3">ENGAGEMENT STAGE</h3>
                         <p class="mx-md-5 px-5 animate__animated animate__bounceIn" style=""><i>Make your engagement memorable</i></p>
-                        <a href="#plan your dream events" class="btn btn-primary">Book Now</a>
+                        <!--<a href="#plan your dream events" class="btn btn-primary">Book Now</a>-->
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
