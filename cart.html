@@ -73,6 +73,43 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
+
+        @media (max-width: 575px) {
+
+    .navbar-toggler {
+        margin-right: 10px;
+    }
+
+    .navbar-brand img {
+        max-height: 45px;
+    }
+
+    .form-inline {
+        display: none !important;
+    }
+
+    .cart-summary h5,
+    .cart-summary h6 {
+        font-size: 16px;
+    }
+
+    .cart-summary .btn {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .container-fluid.bg-dark {
+        padding-top: 40px !important;
+    }
+
+    .container-fluid.bg-dark p,
+    .container-fluid.bg-dark a {
+        font-size: 14px;
+    }
+
+}
+
+
     </style>
 </head>
 
@@ -120,19 +157,27 @@
                 <!-- Right icons -->
                 <div class="d-flex align-items-center ml-auto">
                     <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                        </div>
-                    </div>
+        
 
-                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="login.html">Sign in</a>
+            <a class="dropdown-item" href="signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <!-- Account button -->
+    <a class="btn btn-outline-warning btn-square position-relative mr-2" href="account.html">
+        <i class="fa fa-user"style="color:#D4AF37; border-color:rgba(255,255,255,0.5);"></i>
+    </a>
+</div>
+                    <!-- Cart -->
+                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#D4AF37; border-color:rgba(255,255,255,0.5);">
                         <i class="fa fa-shopping-cart"></i>
                         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
                     </a>
 
-                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+                    <!-- Wishlist -->
+                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#D4AF37; border-color:rgba(255,255,255,0.5);">
                         <i class="far fa-heart"></i>
                         <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
                     </a>
@@ -140,7 +185,7 @@
             </div>
         </div>
     </nav>
-
+    <!-- ====== END FIXED NAVBAR ====== -->
     <!-- Cart Start -->
     <div class="container-fluid" style="padding-top: 80px;">
         <div class="row px-xl-5">
@@ -151,7 +196,7 @@
                         <tr>
                             <th style="text-align: left !important; padding-left: 15px;">Products</th>
                             <th style="text-align: center !important;">Price</th>
-                            <th style="text-align: center !important;">Quantity</th>
+                            <th style="text-align: center !important;">quntity</th>
                             <th style="text-align: center !important;">Total</th>
                             <th style="text-align: center !important;">Remove</th>
                         </tr>
