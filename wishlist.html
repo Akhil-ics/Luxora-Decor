@@ -200,24 +200,30 @@
                 </form>
 
                 <!-- Right icons: account, cart, wishlist -->
-                <div class="d-flex align-items-center ml-auto">
-                    <!-- Account dropdown -->
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                        </div>
-                    </div>
+                  <div class="d-flex align-items-center ml-auto">
+    <!-- Account dropdown -->
+    <div class="btn-group mr-2">
+        
 
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="login.html">Sign in</a>
+            <a class="dropdown-item" href="signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <!-- Account button -->
+    <a class="btn btn-outline-warning btn-square position-relative mr-2" href="account.html">
+        <i class="fa fa-user"style="color:#D4AF37; border-color:rgba(255,255,255,0.5);"></i>
+    </a>
+</div>
                     <!-- Cart -->
-                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#D4AF37; border-color:rgba(255,255,255,0.5);">
                         <i class="fa fa-shopping-cart"></i>
                         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
                     </a>
 
                     <!-- Wishlist -->
-                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
+                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#D4AF37; border-color:rgba(255,255,255,0.5);">
                         <i class="far fa-heart"></i>
                         <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
                     </a>
@@ -595,7 +601,7 @@
 
                         // feedback
                         const original = this.innerHTML;
-                        this.innerHTML = '<i class="fas fa-check"></i> Added';
+                        this.innerHTML = '<i class="fas fa-check"></i>';
                         this.style.background = '#3f7e5c';
                         setTimeout(() => {
                             this.innerHTML = original;
