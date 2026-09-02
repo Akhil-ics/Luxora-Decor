@@ -34,23 +34,107 @@
             right: 0;
             z-index: 1030;
             width: 100%;
-            background-color: #2C2F33 !important; /* dark background */
+            background-color:#2C2F33 !important; /* dark background */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
-                }
-    body
-     {
-            padding-top: 70px;
+            }
+    body {
+            padding-top: 60px;
+            
             background-color: lightgray;
         }
-navbar{
-    min-height: 100px;
-   
+  
+    .about-header {
+      background: lightgray;
+      color: black;
+      padding: 4rem 0;
+    }
+    .about-header h1 {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: black;
+    }
+    .about-story p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+    .team-card {
+      transition: 0.3s;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.06);
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.10);
+    }
+    .team-card img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: 0 auto;
+      border: 4px solid #f8f9fa;
+    }
+    .value-icon {
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+    .bg-soft-gold {
+      background-color: #fcf8f0;
+    }
+    .section-title-about {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title-about::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 3px;
+      background: #d4af37;
+    }
+    @media (max-width: 767px) {
+    .mobile-icons {
+        position: absolute;
+        right: 88px;
+        top: 34px;
+        z-index: 9999;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        padding-right: 0;
+    }
+
+    .mobile-icons > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.mobile-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start;
+    gap: 5px;
 }
 
-.navbar-brand img{
-    height: 100px;
-    width: auto;
+.mobile-icons a {
+    display: flex !important;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 }
 </style>
 
@@ -107,29 +191,38 @@ navbar{
 
                 <!-- Right icons: account, cart, wishlist -->
                 <div class="d-flex align-items-center ml-auto">
-                    <!-- Account dropdown -->
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                        </div>
-                    </div>
+    <!-- Account dropdown -->
+    <div class="btn-group mr-2">
+        
 
-                    <!-- Cart -->
-                    <a class="btn btn-outline-dark btn-square position-relative mr-2" href="cart.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                    </a>
-
-                    <!-- Wishlist -->
-                    <a class="btn btn-outline-dark btn-square position-relative" href="wishlist.html" style="color:#fff; border-color:rgba(255,255,255,0.5);">
-                        <i class="far fa-heart"></i>
-                        <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-                    </a>
-                </div>
-            </div>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="login.html">Sign in</a>
+            <a class="dropdown-item" href="signup.html">Sign up</a>
         </div>
+    </div>
+
+    <!-- Account button -->
+    <div class="mobile-icons">
+
+    <!-- Account -->
+    <a href="account.html" class="btn btn-outline-dark btn-square">
+        <i class="fa fa-user"style="color:#D4AF37; border-color:rgba(255,255,255,0.5);"></i></i>
+    </a>
+
+    <!-- Cart -->
+    <a href="cart.html" class="btn btn-outline-dark btn-square position-relative">
+        <i class="fa fa-shopping-cart"style="color:#D4AF37; border-color:rgba(255,255,255,0.5);"></i>
+        <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+    </a>
+
+    <!-- Wishlist -->
+    <a href="wishlist.html" class="btn btn-outline-dark btn-square position-relative">
+        <i class="far fa-heart"style="color:#D4AF37; border-color:rgba(255,255,255,0.5);"></i>
+        <span id="wishlist-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+    </a>
+</div>
     </nav>
     <!-- ====== END FIXED NAVBAR ====== -->
 
